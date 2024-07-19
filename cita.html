@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinaria Certus</title>
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <style>
+        .appointment-form {
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .appointment-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .appointment-form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .appointment-form input,
+        .appointment-form select,
+        .appointment-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .appointment-form button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .appointment-form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1><img src="/img/logo.png" alt="Logo Veterinaria Certus" width="60px"> VETERINARIA CERTUS</h1>
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="/producto.html">Productos</a></li>
+                    <li><a href="/index.html">Servicios</a></li>
+                    <li><a href="/index.html">Especialidades</a></li>
+                    <li><a href="/medicos.html">Médicos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <a href="/cita.html" class="cta-button">¡Agendar Cita!</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="agendar-cita">
+            <div class="appointment-form">
+                <h2>Agendar Cita</h2>
+                <h2>Agendar Cita</h2>
+                <form action="/submit-appointment" method="post">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+
+                    <label for="fecha">Fecha Deseada:</label>
+                    <input type="date" id="fecha" name="fecha" required>
+
+                    <label for="hora">Hora Deseada:</label>
+                    <input type="time" id="hora" name="hora" required>
+
+                    <label for="mascota">Nombre de la Mascota:</label>
+                    <input type="text" id="mascota" name="mascota" required>
+
+                    <label for="consulta">Descripción de la Consulta:</label>
+                    <textarea id="consulta" name="consulta" rows="4" required></textarea>
+
+                    <button type="submit">Enviar Cita</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="locales-contacto">
+                <h3>Locales y Contacto</h3>
+                <p><strong>Av. Pedro Miotta 620, SJM</strong><br>Teléfono: +51 932 008 081</p>
+                <p><strong>Av. Militar 2026, Lince</strong><br>Teléfono: +51 932 008 081</p>
+            </div>
+            <div class="horario_atencion">
+                <h3>Horario de Atención</h3>
+                <p><strong>San Juan de Miraflores</strong><br>Lunes a Sábado: 8 a.m. - 8 p.m.<br>Domingos: 9 a.m. - 6 p.m.</p>
+                <p><strong>Lince</strong><br>Lunes a Sábado: 8 a.m. - 8 p.m.<br>Domingos: 9 a.m. - 6 p.m.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p><strong>Email:</strong> contacto@veterinariacertus.com</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/ClinicaSantaFeCostaRica/?locale=es_LA" aria-label="Facebook">
+                    <img src="img/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/clinicasantafecr/" aria-label="Instagram">
+                    <img src="img/instagram.png" alt="Instagram">
+                </a>
+                <a href="https://www.tiktok.com/discover/cl%C3%ADnica-santa-fe" aria-label="TikTok">
+                    <img src="img/tiktok.png" alt="TikTok">
+                </a>
+            </div>
+            <p>&copy; 2024 Veterinaria Certus. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
+

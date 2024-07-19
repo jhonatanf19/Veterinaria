@@ -1,0 +1,84 @@
+.cta-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+main {
+    padding: 20px;
+}
+
+.medicos {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.medicos h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+    color: #007bff;
+}
+
+.medico {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.medico img {
+    border-radius: 20%;
+    margin-right: 20px;
+}
+
+.medico h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.medico p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.medico p strong {
+    color: #007bff;
+}
+
+
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-content nav ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .header-content nav ul li {
+        margin-bottom: 10px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-content div {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

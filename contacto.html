@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinaria Certus</title>
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <style>
+        .main-content {
+            background: url('img/santafe.jpg') center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            margin: -110px;
+        }
+
+        .container {
+            max-width: 400px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            position: relative; 
+        }
+        h2 {
+            text-align: center;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555555;
+        }
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 40px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1><img src="/img/logo.png" alt="Logo Veterinaria Certus" width="60px"> VETERINARIA CERTUS</h1>
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="/producto.html">Productos</a></li>
+                    <li><a href="/index.html">Servicios</a></li>
+                    <li><a href="/index.html">Especialidades</a></li>
+                    <li><a href="/medicos.html">Médicos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <a href="/cita.html" class="cta-button">¡Agendar Cita!</a>
+        </div>
+        <nav></nav>
+    </header>
+    <div class="main-content">
+        <div class="overlay"></div>
+        <div class="container">
+            <h2>Contacto</h2>
+            <form action="submit_form.php" method="post">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="telefono">Teléfono:</label>
+                <input type="text" id="telefono" name="telefono">
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="locales-contacto">
+                <h3>Locales y Contacto</h3>
+                <p><strong>Av. Pedro Miotta 620, SJM</strong><br>Teléfono: +51 932 008 081</p>
+                <p><strong>Av. Militar 2026, Lince</strong><br>Teléfono: +51 932 008 081</p>
+            </div>
+            <div class="horario_atencion">
+                <h3>Horario de Atención</h3>
+                <p><strong>San Juan de Miraflores</strong><br>Lunes a Sábado: 8 a.m. - 8 p.m.<br>Domingos: 9 a.m. - 6 p.m.</p>
+                <p><strong>Lince</strong><br>Lunes a Sábado: 8 a.m. - 8 p.m.<br>Domingos: 9 a.m. - 6 p.m.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p><strong>Email:</strong> contacto@veterinariacertus.com</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/ClinicaSantaFeCostaRica/?locale=es_LA" aria-label="Facebook">
+                    <img src="img/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/clinicasantafecr/" aria-label="Instagram">
+                    <img src="img/instagram.png" alt="Instagram">
+                </a>
+                <a href="https://www.tiktok.com/discover/cl%C3%ADnica-santa-fe" aria-label="TikTok">
+                    <img src="img/tiktok.png" alt="TikTok">
+                </a>
+            </div>
+            <p>&copy; 2024 Veterinaria Certus. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
+

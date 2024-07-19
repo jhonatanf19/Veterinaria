@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinaria Certus</title>  
+    <link rel="stylesheet" href="/css/footer.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #005f73;
+            color: #ffffff;
+            padding: 0.5em 1em;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header h1 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        header img {
+            margin-right: 10px;
+        }
+
+        nav {
+            flex-grow: 1;
+            margin-left: 1em;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 1em;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #94d2bd;
+        }
+
+        .cta-button {
+            background-color: #94d2bd;
+            color: #005f73;
+            padding: 0.5em 1.5em;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #005f73;
+            color: #ffffff;
+        }
+
+        main {
+            margin-top: 80px;
+        }
+
+        .hero {
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            background-color: #005f73;
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            animation: fadeInDown 1s;
+            margin-bottom: 0.5em;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            animation: fadeInUp 1s;
+            margin-bottom: 2em;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slider {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .slider ul {
+            display: flex;
+            animation: cambio 8s infinite alternate linear;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 200%;
+        }
+
+        .slider li {
+            width: 100%;
+        }
+
+        .slider img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        @keyframes cambio {
+            0% { margin-left: 0; }
+            50% { margin-left: 0; }
+            55% { margin-left: -100%; }
+            100% { margin-left: -100%; }
+        }
+
+        @media only screen and (min-width: 320px) and (max-width: 768px) {
+            .hero {
+                height: 60vh;
+            }
+
+            .slider img {
+                height: 100%;
+            }
+        }
+
+        #servicios {
+            padding: 4em 2em;
+            background-color: #fff;
+            text-align: center;
+            border-bottom: 2px solid #005f73;
+        }
+
+        #servicios h2 {
+            margin-bottom: 1em;
+            color: #005f73;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        #servicios p {
+            font-size: 1.25em;
+            margin-bottom: 2em;
+            color: #333;
+        }
+
+        .servicios-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2em;
+            justify-content: center;
+        }
+
+        .servicio {
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+            padding: 1em;
+            border-radius: 10px;
+        }
+
+        .servicio:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .servicio img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 1em;
+        }
+
+        .servicio h3 {
+            margin: 0.5em 0;
+            color: #005f73;
+            font-size: 1.5em;
+        }
+
+        .servicio p {
+            color: #666;
+            font-size: 1em;
+        }
+
+        #contacto {
+            padding: 4em 2em;
+            background-color: #e2e2e2;
+            text-align: center;
+        }
+
+        #contacto h2 {
+            margin-bottom: 1em;
+            color: #005f73;
+        }
+
+        #contacto form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1em;
+        }
+
+        #contacto form label {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        #contacto form input,
+        #contacto form textarea {
+            width: 100%;
+            max-width: 500px;
+            padding: 0.75em;
+            margin-bottom: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #contacto form button {
+            padding: 0.75em 2em;
+            background-color: #005f73;
+            border: none;
+            border-radius: 5px;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #contacto form button:hover {
+            background-color: #94d2bd;
+        }
+
+        footer {
+            padding: 2em;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-top: 2px solid #005f73;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        footer p {
+            margin: 1em 0 0 0;
+        }
+
+        footer .locales-contacto, footer .horario_atencion {
+            text-align: left;
+            margin-top: 1em;
+        }
+
+        footer .locales-contacto h3, footer .horario_atencion h3 {
+            margin-bottom: 0.5em;
+        }
+
+        footer .locales-contacto p, footer .horario_atencion p {
+            margin: 0.5em 0;
+        }
+
+        #especialidades {
+            padding: 4em 2em;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        #especialidades h2 {
+            margin-bottom: 1em;
+            color: #005f73;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        #especialidades .especialidades-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2em;
+            justify-content: center;
+        }
+
+        .especialidad {
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+            padding: 1em;
+            border-radius: 10px;
+        }
+
+        .especialidad:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .especialidad img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 1em;
+        }
+
+        .especialidad h3 {
+            margin: 0.5em 0;
+            color: #005f73;
+            font-size: 1.5em;
+        }
+
+        .especialidad p {
+            color: #666;
+            font-size: 1em;
+        }
+        .contenedor_1{
+            display: flex;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1><img src="/img/logo.png" alt="Logo Veterinaria Certus" width="60px"> VETERINARIA CERTUS</h1>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="/producto.html">Productos</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#especialidades">Especialidades</a></li> 
+                    <li><a href="/medicos.html">Medicos</a></li>
+                    <li><a href="/contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <a href="/cita.html" class="cta-button">¡Agendar Cita!</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="slider">
+                <ul>
+                    <li>  <h2>Bienvenidos a Veterinaria Certus</h2><img src="/img/Centro-Veterinario-Huellas-banner2.jpg" alt="Imagen 1"></li>
+                    <li><img src="/img/banner3.jpg" alt="Imagen 2"></li>
+                </ul>
+            </div>
+            <p  >Tu aliado en el cuidado de tu mascota</p>
+        </section>
+
+        <section id="servicios">
+            <h2>Nuestros Servicios</h2>
+            <p>Tenemos todo lo que tu mascota necesita para una vida saludable y feliz.</p>
+            <div class="servicios-container">
+                <div class="servicio">
+                    <img src="/img/clínica-veterinaria.jpg" alt="Consulta Veterinaria">
+                    <h3>Consulta</h3>
+                    <p>Revisiones completas y diagnósticos precisos.</p>
+                </div>
+                <div class="servicio">
+                    <img src="/img/cirugia3.jpg" alt="Cuidados Preventivos">
+                    <h3>Cuidados Preventivos</h3>
+                    <p>Vacunación y desparasitación para tu mascota.</p>
+                </div>
+                <div class="servicio">
+                    <img src="/img/clínica-veterinaria.jpg" alt="Emergencias">
+                    <h3>Emergencias</h3>
+                    <p>Atención urgente para tu mascota en cualquier momento.</p>
+                </div>
+                <div class="servicio">
+                    <img src="/img/cirugia3.jpg" alt="Cirugías">
+                    <h3>Cirugías</h3>
+                    <p>Procedimientos quirúrgicos realizados con seguridad.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="especialidades">
+            <h2>¿Qué ofrecemos?</h2>
+            <div class="especialidades-container">
+                <div class="especialidad">
+                    <h3>Acupuntura</h3>
+                    <p>La Acupuntura Veterinaria actúa complementando en conjunto a diversas especialidades de la profesión, viendo al individuo como un todo.</p>
+                </div>
+                <div class="especialidad">
+                    <h3>Anestesia</h3>
+                    <p>Pensando en la seguridad del paciente, antes de inducirlo a la anestesia, debemos evaluarlo físicamente, así como a través de exámenes preoperatorios.</p>
+                </div>
+                <div class="especialidad">
+                    <h3>Cardiología</h3>
+                    <p>Los exámenes cardiológicos periódicos se han vuelto una práctica necesaria permitiendo la identificación y tratamiento de enfermedades cardíacas.</p>
+                </div>
+                <div class="especialidad">
+                    <h3>Cirugía Especializada</h3>
+                    <p>Nuestros profesionales se encuentran capacitados para realizar todo tipo de cirugías especializadas, desde cirugías plásticas hasta neurocirugías.</p>
+                </div>
+                <div class="especialidad">
+                    <h3>Cirugía General</h3>
+                    <p>Nuestros profesionales se encuentran capacitados para realizar todo tipo de cirugías generales, desde esterilizaciones, hasta extracción de tumores.</p>
+                </div>
+                <div class="especialidad">
+                    <h3>Endocrinología</h3>
+                    <p>La endocrinología veterinaria es el área de la medicina veterinaria que se dedica al estudio de los desórdenes de las glándulas endocrinas.</p>
+                </div>
+                <div class="especialidad">
+                    <h3>Medicina Regenerativa</h3>
+                    <p>En la Clínica Veterinaria Pancho Cavero, hemos implementado las mismas técnicas de humanos en beneficio de nuestros pacientes de 4 patas.</p>
+                </div>
+                <div class="especialidad">
+                    <h3>Dermatología</h3>
+                    <p>La dermatología veterinaria es la especialidad que se dedica al estudio de las enfermedades de la piel, las uñas y el pelo.</p>
+                </div>
+                <div class="especialidad">
+                    <h3>Neurología</h3>
+                    <p>La neurología es la especialidad que se dedica al diagnóstico y tratamiento de enfermedades que afectan el sistema nervioso.</p>
+                </div>
+                <div class="especialidad">
+                    <h3>Nutrición Clínica</h3>
+                    <p>Una dieta equilibrada ayuda a la mascota enferma a incorporar los nutrientes que necesita para reponerse.</p>
+                </div>
+                <div class="especialidad">
+                    <h3>Odontología</h3>
+                    <p>En la Clínica Veterinaria Pancho Cavero, estamos capacitados para atender los problemas orales de tu mascota.</p>
+                </div>
+                <div class="especialidad">
+                    <h3>Oftalmología</h3>
+                    <p>Es vital identificar precozmente los signos de alteración de la visión o de molestias, para ofrecer mejores resultados.</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="map">
+                <h3 style="text-align: center;">UBICACION</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3899.9371578500736!2d-76.94405122415026!3d-12.184679244485533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b917d5e3dc0b%3A0x57f2a1141c5da6f!2sInstituto%20CERTUS%20-%20Sede%20Villa!5e0!3m2!1ses!2spe!4v1719582114426!5m2!1ses!2spe" width="1900" height="450" style="border:1px solid black;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="locales-contacto">
+                <h3>Locales y Contacto</h3>
+                <p><strong>Av. Pedro Miotta 620, SJM</strong><br>Teléfono: +51 932 008 081</p>
+                <p><strong>Av. Militar 2026, Lince</strong><br>Teléfono: +51 932 008 081</p>
+            </div>
+            <div class="horario_atencion">
+                <h3>Horario de Atención</h3>
+                <p><strong>San Juan de Miraflores</strong><br>Lunes a Sábado: 8 a.m. - 8 p.m.<br>Domingos: 9 a.m. - 6 p.m.</p>
+                <p><strong>Lince</strong><br>Lunes a Sábado: 8 a.m. - 8 p.m.<br>Domingos: 9 a.m. - 6 p.m.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p><strong>Email:</strong> contacto@veterinariacertus.com</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/ClinicaSantaFeCostaRica/?locale=es_LA">
+                    <img src="img/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/clinicasantafecr/">
+                    <img src="img/instagram.png" alt="Instagram">
+                </a>
+                <a href="https://www.tiktok.com/discover/cl%C3%ADnica-santa-fe">
+                    <img src="img/tiktok.png" alt="TikTok">
+                </a>
+            </div>
+            <p>&copy; 2024 Veterinaria Certus. Todos los derechos reservados.</p>
+            <p>&copy; Autor: Jhonatan Frank Portillo Toledo</p>
+        </div>
+        
+    </footer>
+</body>
+</html>
+
